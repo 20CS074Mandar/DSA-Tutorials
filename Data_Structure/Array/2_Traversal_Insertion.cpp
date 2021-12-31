@@ -28,5 +28,6 @@ int main(){
     indInsertion(arr, size, element, 100, index);
     size +=1;
     display(arr, size);
+    display(arr,size);
     return 0;
 }
