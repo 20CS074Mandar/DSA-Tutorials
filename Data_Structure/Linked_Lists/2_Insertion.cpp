@@ -41,6 +41,7 @@ Node *insrtIndx(Node *head, int index, int data)
 Node *insrtEnd(Node *head, int data)
 {
     Node *ptr = new Node();
+    //p is responsible for traversing the list 
     Node *p = new Node();
     p = head;
     ptr->data = data;
@@ -48,6 +49,7 @@ Node *insrtEnd(Node *head, int data)
     {
         p = p->next;
     }
+    //After completion of the above loop p will be pointing on the last node 
     p->next = ptr;
     ptr->next = NULL;
     return head;
