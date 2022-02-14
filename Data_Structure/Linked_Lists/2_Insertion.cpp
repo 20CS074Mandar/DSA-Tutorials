@@ -20,7 +20,8 @@ Node *insrtBeg(Node *head, int data)
     Node *ptr = new Node();
     ptr->next = head;
     ptr->data = data;
-    return ptr;
+    head=ptr;
+    return head;
 }
 Node *insrtIndx(Node *head, int index, int data)
 {

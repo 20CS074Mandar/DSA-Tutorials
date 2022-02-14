@@ -8,6 +8,7 @@ public:
     int top;
     int *arr;
 };
+
 int isEmpty(Stack *ptr)
 {
     if (ptr->top == -1)

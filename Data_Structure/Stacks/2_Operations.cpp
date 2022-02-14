@@ -1,4 +1,4 @@
-//Operation using arrays
+// Operation using arrays
 
 #include <iostream>
 using namespace std;
@@ -15,7 +15,7 @@ int isEmpty(stack *ptr)
     {
         return 1;
     }
-    else    
+    else
     {
         return 0;
     }
@@ -46,35 +46,36 @@ void push(stack *ptr, int val)
 }
 int pop(stack *ptr)
 {
-    if (isEmpty(ptr))    
+    if (isEmpty(ptr))
     {
         cout << "\nStack underflow" << endl;
         return -1;
     }
     else
     {
-        int val=ptr->arr[ptr->top];
+        int val = ptr->arr[ptr->top];
         ptr->top--;
         return val;
     }
 }
 void print(stack *ptr)
 {
-    for (int i = 0; i <=ptr->top; i++)
+    for (int i = 0; i <= ptr->top; i++)
     {
-        cout<<ptr->arr[i]<<" ";
+        cout << ptr->arr[i] << " ";
     }
-    cout<<endl;
-    
+    cout << endl;
 }
-int peek(stack *ptr,int i)
+int peek(stack *ptr, int i)
 {
-    int arrayind=ptr->top-i+1;
-    if(arrayind<0){
-        cout<<"INvalid positin for the stack"<<endl;
+    int arrayind = ptr->top - i + 1;
+    if (arrayind < 0)
+    {
+        cout << "INvalid positin for the stack" << endl;
         return -1;
     }
-    else{
+    else
+    {
         return ptr->arr[arrayind];
     }
 }
@@ -89,46 +90,46 @@ int stackbotm(stack *ptr)
 
 int main()
 {
-    stack *sp = new stack();    
+    stack *sp = new stack();
     sp->size = 10;
     sp->top = -1;
     sp->arr = new int;
     cout << "\nStack has been created succesfully" << endl;
-    
-    cout<<"\nBefore pushing isfull :-"<<isFull(sp)<<endl;
-    cout<<"Before pushing isempty :-"<<isEmpty(sp)<<endl;
-    
-    //Push Operations
-    push(sp,51);
-    push(sp,52);
-    push(sp,53);
-    push(sp,54);
-    push(sp,55);
-    push(sp,56);
-    push(sp,57);
-    push(sp,58);
-    push(sp,59);
-    push(sp,60);// -->pushed 10 values
+
+    cout << "\nBefore pushing isfull :-" << isFull(sp) << endl;
+    cout << "Before pushing isempty :-" << isEmpty(sp) << endl;
+
+    // Push Operations
+    push(sp, 51);
+    push(sp, 52);
+    push(sp, 53);
+    push(sp, 54);
+    push(sp, 55);
+    push(sp, 56);
+    push(sp, 57);
+    push(sp, 58);
+    push(sp, 59);
+    push(sp, 60); // -->pushed 10 values
     // push(sp,61); //stack overflow since the size of the stack is 10
-    cout<<endl;
+    cout << endl;
     print(sp);
-    cout<<"\nAfter pushing isfull :-"<<isFull(sp)<<endl;
-    cout<<"After pushing isempty :-"<<isEmpty(sp)<<endl;
-    cout<<"\nTop Element of stack :- "<<stacktop(sp)<<endl;
-    cout<<"Bottom Element of stack :- "<<stackbotm(sp)<<endl;
-    //Pop Pop Operations
-    cout<<"\nPooped "<<pop(sp)<<" from the stack "<<endl;
-    cout<<"Pooped "<<pop(sp)<<" from the stack "<<endl;
-    cout<<"Pooped "<<pop(sp)<<" from the stack "<<endl;
-    cout<<"Pooped "<<pop(sp)<<" from the stack "<<endl;
-    cout<<"\nUpdated array after pop operations "<<endl;
+    cout << "\nAfter pushing isfull :-" << isFull(sp) << endl;
+    cout << "After pushing isempty :-" << isEmpty(sp) << endl;
+    cout << "\nTop Element of stack :- " << stacktop(sp) << endl;
+    cout << "Bottom Element of stack :- " << stackbotm(sp) << endl;
+    // Pop Pop Operations
+    cout << "\nPooped " << pop(sp) << " from the stack " << endl;
+    cout << "Pooped " << pop(sp) << " from the stack " << endl;
+    cout << "Pooped " << pop(sp) << " from the stack " << endl;
+    cout << "Pooped " << pop(sp) << " from the stack " << endl;
+    cout << "\nUpdated array after pop operations " << endl;
     print(sp);
 
-    //Peek Operation
-    for (int i = 1; i <=sp->top+1; i++)
+    // Peek Operation
+    for (int i = 1; i <= sp->top + 1; i++)
     {
-        cout<<"The value at index "<<i<<" is "<<peek(sp,i)<<endl;  
+        cout << "The value at index " << i << " is " << peek(sp, i) << endl;
     }
-    
+
     return 0;
 }

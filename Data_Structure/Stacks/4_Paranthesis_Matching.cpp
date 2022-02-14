@@ -70,7 +70,7 @@ int parenthesisMatch(char * exp){
         }
         else if(exp[i]==')'){
             if(isEmpty(sp)){
-                return 0;
+                return 0;   
             }
             pop(sp); 
            }
