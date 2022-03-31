@@ -14,11 +14,11 @@ int general_method(int v,int n)
         //high - low is used to avoid the possiblity of getting stuck in an infine loop
         while (high-low>1)
         {
-                int mid=(high+low)/2;\
+                int mid=(high+low)/2;
                 if (a[mid]==v)
                 {
                         return mid;
-                }
+                }       
                 if (a[mid]>v)
                 {
                         high=mid-1;

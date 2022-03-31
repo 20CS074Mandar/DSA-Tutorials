@@ -1,56 +1,35 @@
-#include <iostream>
+#include<iostream>
+#include<vector>
 using namespace std;
 
-class Node
-{
-public:
-        int data;
-        Node *next;
-        Node *prev;
-};
-
-Node *insAtBeg(Node *head, int data)
-{
-        Node *new_node = new Node();
-        new_node->data = data;
-        new_node->next = head;
-        new_node->prev = NULL;
-        if (head != NULL)
-        {
-                head->prev = new Node();
-        }
-        head = new_node;
-        return head;
-}
-
-Node *insAtEnd(Node *head, int data)
-{
-        Node *new_node = new Node();
-        Node *last = head;
-        new_node->data = data;
-        new_node->next = NULL;
-        if (head == NULL)
-        {
-                new_node->prev = NULL;
-                head = new_node;
-                return head;
-        }
-        else
-        {
-                while (last->next != NULL)
-                {
-                        last = last->next;
-                }
-                last->next = new_node;
-                new_node->prev = last;
-        }
-        return head;
-}
-
-Node * insAfter(Node * prevnode,int data)
-{}
 int main()
 {
+        int target;
+        cin>>target;
+        vector<vector<int>>arr{{1,3,5,7},{10,11,16,20},{23,30,34,60}};
+        for(int i=0;i<arr.size();i++)
+        {
+                int l=0;
+                int h=arr[i].size()-1;
+                int flag=0;
+                while(l<=h)
+                {
+                        int mid=l+(l-h)/2;
+                        if(arr[i][mid]==target)
+                        {
+                                flag=1;
+                                cout<<"Found"<<endl;
+                                break;
+                        }
+                        if(arr[i][mid]<l)
+                                l=mid+1;
+                        else
+                                h=mid-1;
+                }
+                if(flag==0)
+                        cout<<"Not found"<<endl;
+                
+        }
 
         return 0;
 }
